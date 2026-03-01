@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    border-bottom:2px solid black;
+}
+.brand-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+header ul{
+list-style-type:none;
+display: inline-flex;
+padding: 20px;
+}
+header ul li{
+    padding-left: 20px;
+}
+header ul li a{
+    text-decoration: none;
+    color: black;
+    font-size:20px;
+    transition:0.2s ease-in-out;
+    font-weight:900;
+}
+header ul li a:hover{
+    color: green;
+    border-bottom:3px solid green;
+    
+}
+header button{
+width:200px;
+height: 40px;
+background: rgb(77, 241, 77);
+border-radius:18px;
+border: none;
+font-weight:800;
+opacity: 0.9;
+cursor: pointer;
+transition: 0.2s ease-in;
+}
+header button:hover{
+    background: rgb(14, 211, 14);
+    opacity:9;
+}
+
+
+
+/* Parent  */
+main{
+ margin-top:2%;
+ margin-left:25%;
+}
+.parent{
+    width: 700px;
+    height: 500px;
+    background: rgb(77, 241, 77);
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 500px;
+    height:40px;
+    margin-top: 4%;
+    border: none;
+    border-radius:5px;
+    filter: drop-shadow(4px 4px 8px gray);
+}
+::placeholder{
+    font-size: 20px;
+    padding-left:20px;
+}
