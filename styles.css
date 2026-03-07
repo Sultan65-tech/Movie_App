@@ -63,28 +63,78 @@ header button:hover{
 
 /* Parent  */
 main{
- margin-top:2%;
- margin-left:25%;
+ margin-left:15%;
 }
 .parent{
-    width: 700px;
-    height: 500px;
-    background: rgb(77, 241, 77);
-}
+} 
 .search{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 input{
-    width: 500px;
-    height:40px;
+    width:500px;
+    height:52px;
     margin-top: 4%;
     border: none;
     border-radius:5px;
     filter: drop-shadow(4px 4px 8px gray);
+    padding-left: 40px;
+     font-size: 20px;
+      border-radius:20px;
+          outline: none;
+    outline-style:none;
+    border: none;
+    position: relative;
+}
+input:focus{
+    outline: none;
+    outline-style:none;
+    border: none;
 }
 ::placeholder{
+    /* font-size: 20px;
+    padding-left:10px; */
+}
+.search button{
+    top:23.2px;
+    left:-150px;
+    z-index:1;
+    width: 150px;
+    height:50px;
+    background: gray;
+    border: none;
+    border-radius:20px;
+    position:relative;
+    color:white;
+    cursor: pointer;
     font-size: 20px;
-    padding-left:20px;
+}
+
+
+
+/* Movie_Poster_card */
+.movies{
+    display: grid;
+    grid-template-columns:300px 300px 300px;
+}
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 50px;
+    width: 400px;
+    height:450px;
+    background: gray;
+    border-radius:5px;
+    filter:drop-shadow(4px 4px 8px solid #ccc)
+}
+.movie-card img{
+    width:400px;
+    height:300px;
+}
+.movie-card h2{
+    text-align: center;
+    font-size: 30px;
 }
