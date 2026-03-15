@@ -1,35 +1,45 @@
-var user = document.getElementById("movie-title")
-async function Fetch(){
-    var mod = user.value;
-     const url = `http://www.omdbapi.com/?i=tt3896198&apikey=224f83de&t=${encodeURIComponent(mod)}`;
-       const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = "Fetching data...";
+var userinput = document.getElementById("movie-title");
+var title = document.querySelector("h2");
+var img = document.querySelector("img");
+var text = document.querySelector("p")
+var card = document.querySelector(".movie-card");
+var error = document.querySelector(".error");
+var movieCard= document.querySelector(".movie-card")
+            
+                 
+async function FetchApi(){
+    document.querySelector(".rotate").style.display="block"
+    var uservalue = userinput.value;//Spiderman
+     const url = `http://www.omdbapi.com/?i=tt3896198&apikey=224f83de&s=${encodeURIComponent(uservalue)}`;
+    //  alert("Your request is waiting");
      try{
-    var request = await fetch(url);
+    var response = await fetch(url);
     var data = await response.json();
-    console.log(data);
-     
-//                 if (data.Response === "True") {
-//                     // Display the movie information
-//                     resultDiv.innerHTML = `
-//                         <h2>${data.Title}</h2>
-//                         <p><strong>Year:</strong> ${data.Year}</p>
-//                         <p><strong>Director:</strong> ${data.Director}</p>
-//                         <p><strong>Plot:</strong> ${data.Plot}</p>
-//                         <img src="${data.Poster}" alt="Movie Poster" style="max-width: 200px;">
-//                     `;
-//                 }
-//  else {
-//                     resultDiv.innerHTML = `<p>Error: ${data.Error}</p>`;
-//                 }
-//             }
+    console.log(data)
+    var arr = data.Search;
+    // title.innerHTML= data.Title;
+    // img.src=data.Poster;
+    // var limit = data.Plot.substring(0,60);
+    // text.innerHTML=limit;
+    // card.style.display="flex"
+    document.querySelector(".rotate").style.display="none"
+   var mapped =  arr.map((element)=>{
+    return
+       movieCard.innerHTML = `
+                        <h2>${element.Title}</h2>
+                        <p><strong>Year:</strong> ${element.Year}</p>
+                        <p><strong>Director:</strong> ${element.Director}</p>
+                        <p><strong>Plot:</strong> ${element.Plot}</p>
+                        <img src="${data.Poster}" alt="Movie Poster" style="max-width: 200px;">
+                    `
+    })
+  
      }
              catch (error) {
-                // Handle network errors
-                resultDiv.innerHTML = `<p>An error occurred: ${error.message}</p>`;
+       document.querySelector(".rotate").style.display="none"
+                error.innerHTML=`An error occurred: ${error.message}`;
             }
         
 }
-// document.querySelector("button").addEventListener("click",()=>{
-//     Fetch();
-// })
+
+

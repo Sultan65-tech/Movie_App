@@ -127,6 +127,7 @@ input:focus{
     height:360px;
     background:lightgrey;
    filter: drop-shadow(4px 4px 8px #ccc);
+   display:none;
 }
 .movie-card img{
     width:299px;
@@ -167,4 +168,23 @@ input:focus{
 span{
     font-size: 20px;
     cursor: pointer;
+}
+.rotate{
+    position: absolute;
+    top:50%;
+    left:40%;
+    width:70px;
+    height:70px;
+    border-bottom: 5px solid blue;
+    border-radius: 100px;
+    /* border: 2px solid black; */
+    animation: spin 1s linear infinite;
+    display: none;
+}
+@keyframes spin {
+    from{
+        rotate: 0deg;
+    }to{
+        rotate: 360deg;
+    }
 }
