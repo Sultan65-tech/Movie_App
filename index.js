@@ -1,8 +1,8 @@
-var userinput = document.getElementById("movie-title");
+
 async function FetchApi() {
     document.querySelector(".rotate").style.display = "block";
     const userinput = document.getElementById("movie-title");
-var uservalue = userinput.value;
+var uservalue = userinput.value;  // get the value
      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=224f83de&s=${encodeURIComponent(uservalue)}`;
     
 
@@ -60,8 +60,9 @@ var uservalue = userinput.value;
         } else {
             document.querySelector(".error").textContent = `Movie not found!`;
         }
-    } catch (error) {
+    } catch (err) {
         document.querySelector(".rotate").style.display = "none";
+        alert(`Error connecting to the API ,${err.message} Movie`)
         // document.querySelector(".error").innerHTML = `An error occurred: ${error.message}`;
     }
 }
