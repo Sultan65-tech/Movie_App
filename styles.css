@@ -127,7 +127,7 @@ input:focus{
     height:360px;
     background:lightgrey;
    filter: drop-shadow(4px 4px 8px #ccc);
-   display:none;
+   /* display:none; */
 }
 .movie-card img{
     width:299px;
